@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+</head>
+<body>
+
+<div th:fragment="add">
+    <div id="myModal" class="modal fade" role="dialog">
+
+        <div class="modal-dialog">
+            <form role="form" id="addForm" th:action="@{/admin/add}" method="post">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                        <h4> Add User </h4>
+                    </div>
+                    <div class="modal-body container-fluid row">
+                        <div class="col-md-4 col-md-offset-4">
+
+                            <div class="form-group text-center">
+                                <label for="name">Name</label>
+                                <input type="text" id="name"  class="form-control"
+                                       placeholder="Name"/>
+                            </div>
+                            <!--<div class="form-group text-center">
+                                <label for="age">Age</label>
+                                <input type="number" class="form-control" id="age" name="age"
+                                       placeholder="Age"/>
+                            </div>-->
+
+                            <div class="form-group text-center">
+                                <label for="pass">Password</label>
+                                <input type="text" class="form-control" id="pass" name="pass"
+                                       placeholder="Password"/>
+                            </div>
+
+                            <!--<div class="form-group text-center">
+                                <label for="login">Login</label>
+                                <input type="text" id="login" class="form-control" name="login"
+                                       placeholder="Login"/>
+                            </div>-->
+
+
+                            <div class="form-group text-center">
+                                <label for="authority">Select Role</label>
+                                <select onchange="role()" class="form-control" id="authority">
+                                    <option th:value="ADMIN">ADMIN</option>
+                                    <option th:value="USER">USER</option>
+                                </select>
+                            </div>
+                            <input type="hidden" th:value="2" id="roleId"/>
+                            <script>
+                                function role() {
+                                    var role = document.getElementById("authority");
+                                    if (role[role.selectedIndex].value === "user") {
+                                        document.getElementById("roleId").value = "1";
+                                    }
+                                    if (role[role.selectedIndex].value === "admin") {
+                                        document.getElementById("roleId").value = "2";
+                                    }
+                                }
+                            </script>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Add new user
+                        </button>
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
