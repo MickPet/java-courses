@@ -38,9 +38,10 @@ public class RestTemplateServices {
 
     public void update(User user) {
         String UPDATE_USER = "http://localhost:8080/admin/update";
+        //user.add("Authorization", "Basic YWRtaW5hZG1pbg==");
         HttpEntity<User> requestBody = new HttpEntity<>(user);
         //login("admin", "admin");
-        restTemplate.exchange(UPDATE_USER, HttpMethod.POST, requestBody, User.class);
+        restTemplate.exchange(UPDATE_USER, HttpMethod.PUT, requestBody, User.class).getBody();
     }
 
     public User getUserById(Long id) {

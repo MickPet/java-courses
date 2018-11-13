@@ -14,11 +14,11 @@ $(document).ready(function () {
         var formData = {
             name: $("#name").val(),
 
-            pass: $("#pass").val(),
+            password: $("#password").val(),
 
-            role: {
-                roleId: $("#roleId").val(),
-                authority: $("#authority").val()
+            roles: {
+                id: $("#id").val(),
+                roleName: $("#roleName").val()
             }
         };
 
@@ -26,12 +26,12 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             contentType: "application/json;",
-            url: "/add",
+            url: "/admin/add",
             data: JSON.stringify(formData),
             dataType: 'json',
             complete: [
                 function () {
-                    window.location.replace("/list");
+                    window.location.replace("/admin");
                 }
             ]
         });

@@ -1,16 +1,19 @@
 package rest.resttemplate.model;
 
+import org.springframework.http.HttpHeaders;
+
+import java.io.Serializable;
 import java.util.Set;
 
-public class User {
+public class User{
 
     private int id;
 
     private String name;
 
-    private String pass;
+    private String password;
 
-    private Set<Role> role;
+    private Set<Role> roles;
 
     public Integer getId() {
         return id;
@@ -28,20 +31,20 @@ public class User {
         this.name = name;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setRole(Set<Role> role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
-    public Set<Role> getRole() {
-        return role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
     @Override

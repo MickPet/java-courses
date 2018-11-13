@@ -12,10 +12,10 @@ function updatePost(userId) {
         var formDataUpdate = {
             id: userId,
             name: $("#name" + userId).val(),
-            pass: $("#pass" + userId).val(),
-            role: {
-                roleId: $("#roleId" + userId).val(),
-                authority: $("#authority" + userId).val()
+            password: $("#password" + userId).val(),
+            roles: {
+                id: $("#id" + userId).val(),
+                roleName: $("#roleName" + userId).val()
             }
         };
 
@@ -23,12 +23,12 @@ function updatePost(userId) {
         $.ajax({
             type: "POST",
             contentType: "application/json;",
-            url: "/update",
+            url: "/admin/update",
             data: JSON.stringify(formDataUpdate),
             dataType: 'json',
             complete: [
                 function () {
-                    window.location.replace("/list");
+                    window.location.replace("/admin");
                 }
             ]
         });

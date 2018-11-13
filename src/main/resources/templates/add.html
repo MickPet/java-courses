@@ -32,8 +32,8 @@
                             </div>-->
 
                             <div class="form-group text-center">
-                                <label for="pass">Password</label>
-                                <input type="text" class="form-control" id="pass" name="pass"
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" id="password" name="password"
                                        placeholder="Password"/>
                             </div>
 
@@ -51,15 +51,15 @@
                                     <option th:value="USER">USER</option>
                                 </select>
                             </div>
-                            <input type="hidden" th:value="2" id="roleId"/>
+                            <input type="hidden" th:value="1" id="id"/>
                             <script>
                                 function role() {
-                                    var role = document.getElementById("authority");
-                                    if (role[role.selectedIndex].value === "user") {
-                                        document.getElementById("roleId").value = "1";
+                                    var role = document.getElementById("roleName");
+                                    if (role[role.selectedIndex].value === "ADMIN") {
+                                        document.getElementById("id").value = "1";
                                     }
-                                    if (role[role.selectedIndex].value === "admin") {
-                                        document.getElementById("roleId").value = "2";
+                                    if (role[role.selectedIndex].value === "USER") {
+                                        document.getElementById("id").value = "2";
                                     }
                                 }
                             </script>

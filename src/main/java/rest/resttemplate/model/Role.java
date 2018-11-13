@@ -4,36 +4,36 @@ import java.util.Objects;
 
 public class Role {
 
-    private int roleId;
+    private long id;
 
-    private String authority;
+    private String roleName;
 
-    /*public Role() {
-    }*/
-
-    public Role(String authority) {
-        this.authority = authority;
+    public Role() {
     }
 
-    public int getRoleId() {
-        return roleId;
+    public Role(String roleName) {
+        this.roleName = roleName;
     }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
+    public long getId() {
+        return id;
     }
 
-    public String getAuthority() {
-        return authority;
+    public void setId(long roleId) {
+        this.id = id;
     }
 
-    public void setAuthority(String authority) {
-        this.authority = authority;
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     @Override
     public String toString() {
-        return "Role with id " + roleId + " and name " + authority;
+        return "Role with id " + id + " and name " + roleName;
     }
 
     @Override
@@ -41,12 +41,12 @@ public class Role {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Role role = (Role) o;
-        return roleId == role.roleId &&
-                Objects.equals(authority, role.authority);
+        return id == role.id &&
+                Objects.equals(roleName, role.roleName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roleId, authority);
+        return Objects.hash(id, roleName);
     }
 }

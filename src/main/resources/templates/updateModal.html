@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 <head>
 
@@ -8,7 +8,7 @@
 <div th:fragment="update">
     <div th:attr="id=${user.id}" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
+            &lt;!&ndash; Modal content&ndash;&gt;
             <form th:action="@{/admin/update}" method="post"
             >
                 <div class="modal-content">
@@ -41,7 +41,7 @@
                             <div class="form-group text-center">
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" id="upass"
-                                       th:value="${user.pass}"/>
+                                       th:value="${user.password}"/>
                             </div>
 
                             <div class="form-group text-center">
@@ -67,9 +67,8 @@
 </div>
 
 </body>
-</html>
+</html>-->
 
-<!--
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 <head>
@@ -81,7 +80,7 @@
 
     <div th:attr="id=${user.id}" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            &lt;!&ndash; Modal content&ndash;&gt;
+            <!-- Modal content-->
             <form th:action="@{/admin/update}" method="post" th:attr="id=${user.id}"
                   th:onclick="'updatePost(\'' + ${user.id} + '\');'">
                 <div class="modal-content">
@@ -111,42 +110,42 @@
                                        class="form-control"
                                        th:value="${user.name}"/>
                             </div>
-                            &lt;!&ndash;<div class="form-group text-center">&ndash;&gt;
-                                &lt;!&ndash;<label>Age</label>&ndash;&gt;
-                                &lt;!&ndash;<input type="number" class="form-control" th:attr="id='age' + ${user.id}"&ndash;&gt;
-                                       &lt;!&ndash;th:value="${user.age}"/>&ndash;&gt;
-                            &lt;!&ndash;</div>&ndash;&gt;
+                            <!--<div class="form-group text-center">-->
+                                <!--<label>Age</label>-->
+                                <!--<input type="number" class="form-control" th:attr="id='age' + ${user.id}"-->
+                                       <!--th:value="${user.age}"/>-->
+                            <!--</div>-->
 
                             <div class="form-group text-center">
                                 <label>Password</label>
-                                <input type="text" class="form-control" th:attr="id='pass' + ${user.id}"
-                                       th:value="${user.pass}"/>
+                                <input type="text" class="form-control" th:attr="id='password' + ${user.id}"
+                                       th:value="${user.password}"/>
                             </div>
 
-                            &lt;!&ndash;<div class="form-group text-center">&ndash;&gt;
-                                &lt;!&ndash;<label>Login</label>&ndash;&gt;
-                                &lt;!&ndash;<input type="text" th:attr="id='login' + ${user.id}" class="form-control"&ndash;&gt;
-                                       &lt;!&ndash;th:value="${user.login}"/>&ndash;&gt;
-                            &lt;!&ndash;</div>&ndash;&gt;
+                            <!--<div class="form-group text-center">-->
+                                <!--<label>Login</label>-->
+                                <!--<input type="text" th:attr="id='login' + ${user.id}" class="form-control"-->
+                                       <!--th:value="${user.login}"/>-->
+                            <!--</div>-->
 
                             <div class="form-group text-center">
                                 <label>Select Role</label>
                                 <select th:onchange="'urole(\''+ ${user.id} +'\');'" class="form-control"
-                                        th:attr="id='authority'+${user.id}">
+                                        th:attr="id='roleName'+${user.id}">
                                     <option th:value="admin">admin</option>
                                     <option th:value="user">user</option>
                                 </select>
                             </div>
 
-                            <input type="hidden" th:value="2" th:attr="id='roleId' + ${user.id}"/>
+                            <input type="hidden" th:value="1" th:attr="id='id' + ${user.id}"/>
                             <script>
                                 function urole(id) {
-                                    var role = document.getElementById("authority" + id);
+                                    var role = document.getElementById("roleName" + id);
                                     if (role[role.selectedIndex].value === "USER") {
-                                        document.getElementById("roleId" + id).value = "1";
+                                        document.getElementById("id" + id).value = "2";
                                     }
                                     if (role[role.selectedIndex].value === "ADMIN") {
-                                        document.getElementById("roleId" + id).value = "2";
+                                        document.getElementById("id" + id).value = "1";
                                     }
                                 }
                             </script>
@@ -167,4 +166,4 @@
 </div>
 
 </body>
-</html>-->
+</html>

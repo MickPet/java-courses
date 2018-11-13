@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -12,10 +12,10 @@
 
     <title>Admin Panel</title>
 
-    <!-- Bootstrap core CSS -->
+    &lt;!&ndash; Bootstrap core CSS &ndash;&gt;
     <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
 
-    <!-- Custom styles for this template -->
+    &lt;!&ndash; Custom styles for this template &ndash;&gt;
     <link href="/css/dashboard.css" rel="stylesheet"/>
 
     <style id="holderjs-style" type="text/css"></style>
@@ -55,16 +55,16 @@
                         <tr th:each="user : ${users}">
                             <td th:text="${user.id}"></td>
                             <td th:text="${user.name}"></td>
-                            <td th:text="${user.pass}"></td>
-                            <td th:text="${user.role}"></td>
+                            <td th:text="${user.password}"></td>
+                            <td th:text="${user.roles}"></td>
                             <td><a class="btn btn-info" role="button"
                                    data-toggle="modal"
                                    th:attr="data-target='#' + ${user.id}"
                             >Update</a>
                                 <div th:replace="updateModal::update"></div>
-                                <!--<form method="GET" action="admin/update">
+                                &lt;!&ndash;<form method="GET" action="admin/update">
                                     <button type="submit" class="btn btn-info btn-sm" name="update" th:value="${user.id}">Update</button>
-                                </form>-->
+                                </form>&ndash;&gt;
                             </td>
                         </tr>
                         </tbody>
@@ -89,17 +89,16 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+&lt;!&ndash; Bootstrap core JavaScript
+================================================== &ndash;&gt;
+&lt;!&ndash; Placed at the end of the document so the pages load faster &ndash;&gt;
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/docs.min.js"></script>
 
 </body>
-</html>
+</html>-->
 
-<!--
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 <head>
@@ -112,7 +111,7 @@
     <title>Admin Panel</title>
 </head>
 <body>
-<div th:replace="navbar::navbar"></div>
+<!--<div th:replace="navbar::navbar"></div>-->
 <a class="btn btn-info" role="button"
    data-toggle="modal"
    data-target="#myModal"
@@ -128,15 +127,15 @@
         <th>Password</th>
         <th>Role</th>
         <th>Edit</th>
-        &lt;!&ndash;<th>Delete</th>&ndash;&gt;
+        <!--<th>Delete</th>-->
     </tr>
     </thead>
     <tbody>
     <tr th:each="user : ${users}">
         <td th:text="${user.id}"></td>
         <td th:text="${user.name}"></td>
-        <td th:text="${user.pass}"></td>
-        <td th:text="${user.role}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.roles}"></td>
         <td><a class="btn btn-info" role="button"
                data-toggle="modal"
                th:attr="data-target='#' + ${user.id}"
@@ -144,13 +143,13 @@
 
             <div th:replace="updateModal::update"></div>
         </td>
-        &lt;!&ndash;<td><a class="btn btn-danger" role="button"
+        <!--<td><a class="btn btn-danger" role="button"
                th:href="@{/delete/(id=${user.id})}">Delete</a>
-        </td>&ndash;&gt;
+        </td>-->
     </tr>
     </tbody>
 </table>
 </body>
 <a role="button" class="btn btn-primary" th:href="@{/logout}">Logout</a>
 
-</html>-->
+</html>
