@@ -25,24 +25,12 @@
                                 <input type="text" id="name"  class="form-control"
                                        placeholder="Name"/>
                             </div>
-                            <!--<div class="form-group text-center">
-                                <label for="age">Age</label>
-                                <input type="number" class="form-control" id="age" name="age"
-                                       placeholder="Age"/>
-                            </div>-->
 
                             <div class="form-group text-center">
                                 <label for="password">Password</label>
                                 <input type="text" class="form-control" id="password" name="password"
                                        placeholder="Password"/>
                             </div>
-
-                            <!--<div class="form-group text-center">
-                                <label for="login">Login</label>
-                                <input type="text" id="login" class="form-control" name="login"
-                                       placeholder="Login"/>
-                            </div>-->
-
 
                             <div class="form-group text-center">
                                 <label for="authority">Select Role</label>
@@ -55,11 +43,11 @@
                             <script>
                                 function role() {
                                     var role = document.getElementById("roleName");
-                                    if (role[role.selectedIndex].value === "ADMIN") {
-                                        document.getElementById("id").value = "1";
-                                    }
                                     if (role[role.selectedIndex].value === "USER") {
                                         document.getElementById("id").value = "2";
+                                    }
+                                    if (role[role.selectedIndex].value === "ADMIN") {
+                                        document.getElementById("id").value = "1";
                                     }
                                 }
                             </script>

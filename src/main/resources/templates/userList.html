@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -6,112 +6,26 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link rel="shortcut icon" href="http://bootstrap-3.ru/assets/ico/favicon.ico"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>Admin Panel</title>
-
-    &lt;!&ndash; Bootstrap core CSS &ndash;&gt;
-    <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
-
-    &lt;!&ndash; Custom styles for this template &ndash;&gt;
-    <link href="/css/dashboard.css" rel="stylesheet"/>
-
-    <style id="holderjs-style" type="text/css"></style>
-</head>
-
-<body>
-<div th:replace="navbar::navbar"></div>
-
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h1>Admin panel</h1>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#admin">User Table</a></li>
-        <li><a data-toggle="tab" href="#menu1">New user</a></li>
-    </ul>
-
-    <div class="tab-content">
-
-        <div id="admin" class="tab-pane fade in active">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title"><strong>All
-                        Users
-                    </strong></h4>
-                </div>
-                <div class="panel-body">
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Password</th>
-                            <th>Role</th>
-                            <th>Edit</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="user : ${users}">
-                            <td th:text="${user.id}"></td>
-                            <td th:text="${user.name}"></td>
-                            <td th:text="${user.password}"></td>
-                            <td th:text="${user.roles}"></td>
-                            <td><a class="btn btn-info" role="button"
-                                   data-toggle="modal"
-                                   th:attr="data-target='#' + ${user.id}"
-                            >Update</a>
-                                <div th:replace="updateModal::update"></div>
-                                &lt;!&ndash;<form method="GET" action="admin/update">
-                                    <button type="submit" class="btn btn-info btn-sm" name="update" th:value="${user.id}">Update</button>
-                                </form>&ndash;&gt;
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="menu1" class="tab-pane fade">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title"><strong>New User</strong></h4>
-                </div>
-                <div class="panel-body">
-                    <div class="col-md-4 col-md-offset-4">
-
-                        <div th:replace="add::add"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-&lt;!&ndash; Bootstrap core JavaScript
-================================================== &ndash;&gt;
-&lt;!&ndash; Placed at the end of the document so the pages load faster &ndash;&gt;
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/docs.min.js"></script>
-
-</body>
-</html>-->
-
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/ajaxForAddPost.js"></script>
     <script src="/js/ajaxForUpdatePost.js"></script>
+
     <title>Admin Panel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet"/>
+
+    <style id="holderjs-style" type="text/css"></style>
 </head>
 <body>
-<!--<div th:replace="navbar::navbar"></div>-->
+<div th:replace="navbar::navbar"></div>
+
 <a class="btn btn-info" role="button"
    data-toggle="modal"
    data-target="#myModal"
@@ -150,6 +64,4 @@
     </tbody>
 </table>
 </body>
-<a role="button" class="btn btn-primary" th:href="@{/logout}">Logout</a>
-
 </html>

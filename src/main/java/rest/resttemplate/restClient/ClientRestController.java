@@ -50,7 +50,7 @@ public class ClientRestController {
     }
 
     @RequestMapping(value = "/admin/update", method = RequestMethod.POST)
-    public ModelAndView updateUser(User user) {
+    public ModelAndView updateUser(@RequestBody User user) {
         restTemplateServices.update(user);
         return new ModelAndView("redirect:/admin");
     }

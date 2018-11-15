@@ -13,10 +13,10 @@ function updatePost(userId) {
             id: userId,
             name: $("#name" + userId).val(),
             password: $("#password" + userId).val(),
-            roles: {
+            roles: [{
                 id: $("#id" + userId).val(),
                 roleName: $("#roleName" + userId).val()
-            }
+            }]
         };
 
         // DO POST

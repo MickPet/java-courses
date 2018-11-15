@@ -21,8 +21,6 @@ public class RestTemplateServices {
     @Autowired
     RestTemplate restTemplate;
 
-
-
     public List<User> showUsers() {
         String LIST = "http://localhost:8080/admin";
         ResponseEntity<User[]> response = restTemplate.exchange(LIST, HttpMethod.GET, null, User[].class);
@@ -41,7 +39,7 @@ public class RestTemplateServices {
         //user.add("Authorization", "Basic YWRtaW5hZG1pbg==");
         HttpEntity<User> requestBody = new HttpEntity<>(user);
         //login("admin", "admin");
-        restTemplate.exchange(UPDATE_USER, HttpMethod.PUT, requestBody, User.class).getBody();
+        restTemplate.exchange(UPDATE_USER, HttpMethod.POST, requestBody, User.class).getBody();
     }
 
     public User getUserById(Long id) {

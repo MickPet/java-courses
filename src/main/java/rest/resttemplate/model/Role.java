@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Role {
 
-    private long id;
+    private Long id;
 
     private String roleName;
 
@@ -19,7 +19,7 @@ public class Role {
         return id;
     }
 
-    public void setId(long roleId) {
+    public void setId(Long id) {
         this.id = id;
     }
 
